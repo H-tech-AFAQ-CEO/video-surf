@@ -12,18 +12,25 @@ export function Wordmark({ studio = false }: { studio?: boolean }) {
 
 export function SiteHeader({ studio = false }: { studio?: boolean }) {
   return (
-    <header className="relative z-30 border-b border-border bg-background/95">
-      <div className="mx-auto grid h-16 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 sm:flex sm:px-8">
-        <Wordmark studio={studio} />
-        <nav className="ml-auto hidden items-center gap-1 sm:flex" aria-label="Primary navigation">
-          <Button variant="ghost" asChild><Link to="/">Explore</Link></Button>
-          <Button variant="ghost" asChild><Link to="/spot">Saved waves</Link></Button>
-          <Button variant="ghost" asChild><Link to="/studio">Studio</Link></Button>
-          <Button variant="outline">Cart (2)</Button>
-        </nav>
-        <Button variant="outline" size="icon" className="sm:hidden" aria-label="Open menu"><Menu /></Button>
-      </div>
-    </header>
+    <>
+      <header className="relative z-30 border-b border-border bg-background/95 backdrop-blur">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 sm:h-20 sm:px-8">
+          <Wordmark studio={studio} />
+          <nav className="hidden items-center gap-1 sm:flex" aria-label="Primary navigation">
+            <Button variant="ghost" asChild><Link to="/">Explore</Link></Button>
+            <Button variant="ghost" asChild><Link to="/spot">Saved waves (1)</Link></Button>
+            <Button variant="ghost" asChild><Link to="/studio">Studio</Link></Button>
+            <Button variant="outline">Cart (2)</Button>
+          </nav>
+          <Button variant="outline" size="icon" className="sm:hidden" aria-label="Open menu"><Menu /></Button>
+        </div>
+      </header>
+      <nav className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-3 border-t border-border bg-card/95 p-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur sm:hidden" aria-label="Mobile navigation">
+        <Link to="/" className="rounded-md px-2 py-2 text-center text-xs font-bold text-primary">Explore</Link>
+        <Link to="/spot" className="rounded-md px-2 py-2 text-center text-xs font-bold text-primary">Saved waves</Link>
+        <Link to="/studio" className="rounded-md px-2 py-2 text-center text-xs font-bold text-primary">Studio</Link>
+      </nav>
+    </>
   );
 }
 

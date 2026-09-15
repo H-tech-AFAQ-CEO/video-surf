@@ -1,29 +1,35 @@
-# Welcome to your Lovable project
+# video.surf
 
-This project was built with [Lovable](https://lovable.dev).
+video.surf is a responsive surf-capture marketplace for finding, selecting, and booking photos and videos from Bali surf spots.
 
-## Build with Lovable
+**Developer:** Afaq Ahmad
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+## Routes
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- `/` — Explore the Bali surf map, search spots, select markers, and open a spot.
+- `/spot` — Browse dated captures, select waves, review pricing, and book a private session.
+- `/studio` — Manage photographer sessions, capture counts, sales, and availability.
 
-## Development
+## Local development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+```bash
+pnpm install
+pnpm dev
+pnpm build
 ```
 
-## Built with
+The app uses Vite with TanStack Router, React, TypeScript, Tailwind CSS, and shadcn/ui primitives.
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## Design system
+
+The visual system pairs a warm sand background with deep ocean blue, coral accents, rounded cards, and a serif display face for editorial surf storytelling. Nunito Sans handles interface copy; Lora handles headings. Shared navigation, focus states, safe-area spacing, and reduced-motion behavior live in `src/components/site-shell.tsx` and `src/styles.css`.
+
+## Responsive behavior
+
+All three routes are mobile-first and tested around compact phone widths and spacious desktop layouts. Desktop navigation collapses into a bottom navigation bar on phones, capture grids reflow from two to four columns, and booking/actions remain reachable without obscuring content.
+
+## Assets
+
+Surf photography and the illustrated map are bundled in `src/assets`. They are used locally so the preview and production build do not depend on external image hosts.
+
+© 2026 video.surf. Built by Afaq Ahmad.

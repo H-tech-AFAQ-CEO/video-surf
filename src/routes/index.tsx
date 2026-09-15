@@ -27,7 +27,7 @@ const spots = [
 
 function Home() {
   const [selected, setSelected] = useState(defaultSpot);
-  return <main className="min-h-screen overflow-hidden bg-background">
+  return <main className="min-h-screen overflow-hidden bg-background pb-20 sm:pb-0">
     <SiteHeader />
     <section className="relative">
       <TideLines />

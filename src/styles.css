@@ -139,12 +139,19 @@
     border-color: var(--color-border);
   }
 
+  html { scroll-behavior: smooth; }
+
   body {
+    min-width: 320px;
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     letter-spacing: 0;
+    text-rendering: optimizeLegibility;
   }
+
+  button, a { -webkit-tap-highlight-color: transparent; }
+  :focus-visible { outline: 2px solid var(--color-ring); outline-offset: 3px; }
 
   h1, h2, h3, .font-serif { font-family: var(--font-serif); }
 }

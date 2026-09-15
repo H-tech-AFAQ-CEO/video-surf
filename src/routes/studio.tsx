@@ -23,7 +23,7 @@ const shoots = [
 ];
 
 function Studio() {
-  return <main className="min-h-screen bg-background">
+  return <main className="min-h-screen bg-background pb-20 sm:pb-0">
     <SiteHeader studio />
     <section className="relative overflow-hidden border-b border-border"><TideLines compact /><div className="relative mx-auto grid max-w-7xl gap-6 px-5 py-9 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:px-8 sm:py-12"><div><p className="text-xs font-bold uppercase text-muted-foreground">Photographer workspace</p><h1 className="mt-1 text-4xl font-semibold text-primary sm:text-5xl">Made Surf Shots</h1><p className="mt-3 text-muted-foreground">Your sessions, captures and earnings — ready before the next tide.</p></div><div className="flex gap-3"><Button variant="outline">Edit profile</Button><Button>New shoot</Button></div></div></section>
     <div className="mx-auto max-w-7xl px-5 py-7 sm:px-8">
